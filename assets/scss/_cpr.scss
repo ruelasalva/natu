@@ -1,0 +1,166 @@
+/*
+* - CONFIGS - 
+*/
+$cpr-grid-breakpoints: (
+	xs: 0px,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px
+);
+
+$cpr-grid-columns: 12;
+$cpr-grid-gutter-width: 30px;
+
+/*
+* - FUNCTIONS - 
+*/
+@function cpr-breakpoint-min($cpr-name, $cpr-breakpoints: $cpr-grid-breakpoints) {
+	$cpr-min: map-get($cpr-breakpoints, $cpr-name);
+	@return if($cpr-min != 0, $cpr-min, null);
+}
+
+/*
+* - MIXINS - 
+*/
+@mixin cpr-media-breakpoint-up($cpr-name, $cpr-breakpoints: $cpr-grid-breakpoints) {
+	$cpr-min: cpr-breakpoint-min($cpr-name, $cpr-breakpoints);
+	@if $cpr-min {
+		@media (min-width: $cpr-min) {
+			@content;
+		}
+	} @else {
+		@content;
+	}
+}
+
+@mixin cpr-make-grid($cpr-gutter: $cpr-grid-gutter-width) {
+	display: flex;
+	flex-wrap: wrap;
+	margin-right: -$cpr-gutter / 2;
+	margin-left: -$cpr-gutter / 2;
+}
+
+@mixin make-cpr-col($cpr-size) {
+	flex: 0 0 percentage(1 / $cpr-size);
+	// Add a `max-width` to ensure content within each column does not blow out
+	// the width of the column. Applies to IE10+ and Firefox. Chrome and Safari
+	// do not appear to require this.
+	max-width: percentage(1 / $cpr-size);
+}
+
+@mixin cpr-make-grid-columns(
+	$cpr-columns: $cpr-grid-columns,
+	$cpr-gutter: $cpr-grid-gutter-width,
+	$cpr-breakpoints: $cpr-grid-breakpoints
+) {
+	// Common properties for all breakpoints
+	%cpr-grid-column {
+		position: relative;
+		width: 100%;
+		padding-right: $cpr-gutter / 2;
+		padding-left: $cpr-gutter / 2;
+	}
+
+	@each $cpr-breakpoint in map-keys($cpr-breakpoints) {
+		// Allow columns to stretch full width below their breakpoints
+		@for $id from 1 through $cpr-columns {
+			.cpr-grid.cpr-#{$cpr-breakpoint}-#{$id} .cpr-column {
+				@extend %cpr-grid-column;
+			}
+		}
+
+		@include cpr-media-breakpoint-up($cpr-breakpoint, $cpr-breakpoints) {
+			@for $id from 1 through $cpr-columns {
+				.cpr-grid.cpr-#{$cpr-breakpoint}-#{$id} .cpr-column {
+					@include make-cpr-col($id);
+				}
+			}
+		}
+	}
+}
+
+// [converter] $cpr-parent hack
+@mixin cpr-responsive-visibility($cpr-parent) {
+	#{$cpr-parent} {
+		display: inline-block !important;
+	}
+}
+
+// [converter] $cpr-parent hack
+@mixin cpr-responsive-invisibility($cpr-parent) {
+	#{$cpr-parent} {
+		display: none !important;
+	}
+}
+
+/*
+* - CSS - 
+*/
+
+/* - Root -*/
+:root {
+	@each $cpr-breakpoint, $cpr-value in $cpr-grid-breakpoints {
+		--cpr-#{$cpr-breakpoint}: #{$cpr-value};
+	}
+}
+
+/* - Grid -*/
+.cpr-grid {
+	@include cpr-make-grid();
+
+	&.cpr-transitions .cpr-column {
+		transition: all 0.3s ease-in-out;
+	}
+}
+
+@include cpr-make-grid-columns();
+
+/* - Controls -*/
+.cpr-controls {
+	padding-left: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+	box-sizing: border-box;
+	list-style: none;
+
+	& > li {
+		display: inline-block;
+		list-style: none;
+
+		&.active {
+			a {
+				text-decoration: underline;
+			}
+		}
+
+		&:not(:last-child) {
+			margin-right: 0.5rem;
+		}
+	}
+}
+
+/* - Visivility utilities -*/
+@each $cpr-breakpoint, $cpr-value in $cpr-grid-breakpoints {
+	@include cpr-responsive-invisibility('.visible-#{$cpr-breakpoint}');
+}
+
+@media (max-width: map-get($cpr-grid-breakpoints, 'sm')) {
+	@include cpr-responsive-visibility('.visible-xs');
+}
+
+@media (min-width: map-get($cpr-grid-breakpoints, 'sm')) and (max-width: map-get($cpr-grid-breakpoints, 'md')) {
+	@include cpr-responsive-visibility('.visible-sm');
+}
+
+@media (min-width: map-get($cpr-grid-breakpoints, 'md')) and (max-width: map-get($cpr-grid-breakpoints, 'lg')) {
+	@include cpr-responsive-visibility('.visible-md');
+}
+
+@media (min-width: map-get($cpr-grid-breakpoints, 'lg')) and (max-width: map-get($cpr-grid-breakpoints, 'xl')) {
+	@include cpr-responsive-visibility('.visible-lg');
+}
+
+@media (min-width: map-get($cpr-grid-breakpoints, 'xl')) {
+	@include cpr-responsive-visibility('.visible-xl');
+}

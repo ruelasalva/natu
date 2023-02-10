@@ -1,0 +1,210 @@
+/*
+* -  BOOTSTRAP VARIABLES OVERRIDE -
+*/
+
+// General config
+$enable-responsive-font-sizes: true;
+$enable-caret: false;
+
+// Color system
+$white: #fff;
+$black: #000;
+
+$t-primary: #2c2c2c;//TEXT PRODUCT MENU ANCHOR GRAY
+$t-secondary: #ee3530;//HOVER RED A
+$t-tertiary: #9d9d9d;//GRAY INPUT
+$t-quaternary: #676b6d;//GRAY INPUT FOOTER
+
+$c-primary: #ff7b80;
+
+$g-primary: #fff;
+$g-secondary: #f6f6f6; //BG-STORE
+$g-tertiary: #1f1f1f; //title
+$g-quaternary: #727274;
+$g-quinary: #cfd0d1;
+$g-senary: #545454;
+
+$grays: (
+	'primary': $g-primary,
+	'secondary': $g-secondary,
+	'tertiary': $g-tertiary,
+	'quaternary': $g-quaternary,
+	'quinary': $g-quinary,
+	'senary': $g-senary
+);
+
+// Colors
+$colors: (
+	'black': $black,
+	'c-primary': $c-primary
+);
+
+// Theme colors
+$theme-colors: (
+	'primary': $t-primary,
+	'secondary': $t-secondary,
+	'tertiary': $t-tertiary,
+	'quaternary': $t-quaternary
+);
+
+// Typography
+$font-family-primary: 'Inter', sans-serif;
+
+$font-family-base: $font-family-primary;
+$font-size-base: 0.8125rem;
+
+:root {
+	--font-family-primary: #{inspect($font-family-primary)};
+}
+
+// Headings
+$h1-font-size: $font-size-base * 1.7;
+$h2-font-size: $font-size-base * 1.6;
+$h3-font-size: $font-size-base * 1.5;
+$h4-font-size: $font-size-base * 1.4;
+$h5-font-size: $font-size-base * 1.25;
+$h6-font-size: $font-size-base;
+
+$headings-margin-bottom: 0;
+$headings-font-weight: 400;
+
+$display1-size: 6rem;
+$display2-size: 5.5rem;
+$display3-size: 4.5rem;
+$display4-size: 3.125rem;
+
+$display1-weight: 300;
+$display2-weight: 300;
+$display3-weight: 300;
+$display4-weight: 300;
+
+// Lead
+$lead-font-size: 1.25rem;
+
+// Displays
+$display1-size: 5rem;
+
+// Body
+$body-bg: $g-primary;
+$body-color: $t-secondary;
+
+// Components
+$border-radius: 0.3rem;
+$border-radius-lg: 0.3rem;
+$border-radius-sm: 0.3rem;
+
+// Navbar
+$navbar-padding-y: 1.35rem;
+
+$navbar-nav-link-padding-x: 1.2rem;
+
+$navbar-dark-color: $g-tertiary;
+$navbar-dark-hover-color: rgba($g-tertiary, 0.75);
+
+$navbar-toggler-border-radius: 0.25rem;
+$navbar-dark-toggler-border-color: rgba($g-tertiary, 0.1);
+
+// Links
+$link-color: $t-primary;
+$link-hover-decoration: none;
+
+// Buttons + Forms
+$input-btn-padding-y: 0.53rem;
+$input-btn-padding-x: 0.75rem;
+$input-btn-font-family: null;
+/* $input-btn-font-size: $font-size-base;
+$input-btn-line-height: $line-height-base; */
+
+$input-btn-focus-width: 0.2rem;
+/* $input-btn-focus-color: rgba($component-active-bg, 0.25);
+$input-btn-focus-box-shadow: 0 0 0 $input-btn-focus-width $input-btn-focus-color; */
+
+$input-btn-padding-y-sm: 0.25rem;
+$input-btn-padding-x-sm: 0.5rem;
+/* $input-btn-font-size-sm: $font-size-sm;
+$input-btn-line-height-sm: $line-height-sm; */
+
+$input-btn-padding-y-lg: 0.8rem;
+$input-btn-padding-x-lg: 1.4rem;
+$input-btn-font-size-lg: $font-size-base;
+/* $input-btn-line-height-lg: $line-height-lg; */
+
+/* $input-btn-border-width: $border-width; */
+
+// Inputs
+$input-border-color: $g-senary;
+
+// Alerts
+
+// Dropdowns
+$dropdown-font-size: $font-size-base;
+$dropdown-bg: $body-color;
+$dropdown-border-color: $t-primary;
+
+$dropdown-link-color: $white;
+$dropdown-link-hover-color: $white;
+$dropdown-link-hover-bg: $t-primary;
+
+/*
+* -  IMPORTS -
+*/
+// Required
+@import './bootstrap/scss/functions';
+@import './bootstrap/scss/variables';
+@import './bootstrap/scss/mixins';
+
+// Remove from Map
+$colors: map-remove(
+	$colors,
+	'blue',
+	'pink',
+	'red',
+	'yellow',
+	'green',
+	'cyan',
+	'indigo',
+	'purple',
+	'orange',
+	'teal',
+	'gray',
+	'gray-dark'
+);
+
+$theme-colors: map-remove($theme-colors, 'light', 'dark');
+
+@import './bootstrap/scss/root';
+@import './bootstrap/scss/reboot';
+@import './bootstrap/scss/grid';
+
+// Optional
+@import './bootstrap/scss/type';
+@import './bootstrap/scss/images';
+// @import './bootstrap/scss/code';
+@import './bootstrap/scss/tables';
+@import './bootstrap/scss/forms';
+@import './bootstrap/scss/buttons';
+@import './bootstrap/scss/transitions';
+@import './bootstrap/scss/dropdown';
+@import './bootstrap/scss/button-group';
+@import './bootstrap/scss/input-group';
+@import './bootstrap/scss/custom-forms';
+@import './bootstrap/scss/nav';
+@import './bootstrap/scss/navbar';
+@import './bootstrap/scss/card';
+// @import './bootstrap/scss/breadcrumb';
+@import './bootstrap/scss/pagination';
+// @import './bootstrap/scss/badge';
+// @import './bootstrap/scss/jumbotron';
+@import './bootstrap/scss/alert';
+// @import './bootstrap/scss/progress';
+@import './bootstrap/scss/media';
+@import './bootstrap/scss/list-group';
+@import './bootstrap/scss/close';
+// @import './bootstrap/scss/toasts';
+@import './bootstrap/scss/modal';
+// @import './bootstrap/scss/tooltip';
+// @import './bootstrap/scss/popover';
+@import './bootstrap/scss/carousel';
+@import './bootstrap/scss/spinners';
+@import './bootstrap/scss/utilities';
+@import './bootstrap/scss/print';

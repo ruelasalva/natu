@@ -1,0 +1,100 @@
+.form-group.has-danger > .select2-container .select2-selection--single {
+    border-color: #fb6340 !important;
+}
+
+.form-group.has-danger > .select2-container .select2-selection--multiple {
+    border-color: #fb6340 !important;
+}
+
+.form-group.has-danger > .select2-container .select2-selection__rendered {
+    color: #fb6340 !important;
+}
+
+.form-group.has-success > .select2-container .select2-selection--single {
+    border-color: #2dce89 !important;
+}
+
+.form-group.has-success > .select2-container .select2-selection--multiple {
+    border-color: #2dce89 !important;
+}
+
+.form-group.has-danger .dz-message {
+    border: 1px dashed #fb6340 !important;
+}
+
+.select2-selection__rendered {
+    font-size: .875rem !important;
+}
+
+.form-control.from-table {
+    display: table;
+}
+
+.select2.select2-container {
+    overflow-x: auto;
+}
+
+.fc-event .fc-time {
+    color: #fff;
+    width: 100%;
+}
+
+body.dragging, body.dragging * {
+  cursor: move !important;
+}
+
+.dragged {
+  position: absolute;
+  opacity: 0.5;
+  z-index: 2000;
+}
+
+.sorted-table tr {
+    cursor: pointer !important;
+}
+
+tr.placeholder {
+  position: relative;
+}
+
+tr.placeholder:before {
+  position: absolute;
+}
+
+.card-height {
+    min-height: 547px;
+}
+
+@media (max-width: 1200px)
+{
+    .card-height {
+        min-height: auto;
+    }
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    color: #000000;
+}
+
+.fit-img {
+    height: 186px;
+}
+
+.form-control.from-table.form-table-area {
+    display: block;
+    width: 100%;
+    height: 186px;
+    overflow-y: auto;
+}
+
+.ck-content {
+	min-height: 200px;
+}
+
+.form-group.has-danger .ck-content {
+	border-color: #fb6340 !important;
+}
+
+.form-group.has-success .ck-content {
+	border-color: #2dce89 !important;
+}
