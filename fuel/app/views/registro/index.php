@@ -37,7 +37,7 @@
                         <div class="form-row">
                             <div class="form-group col-sm">
                                 <?php echo Form::label('Nombre de usuario', 'username'); ?>
-                                <?php echo Form::input('username', trim(isset($username) ? $username : ''), array('class' => 'form-control '.trim($classes['username']), 'placeholder' => 'Nombre de usuario')); ?>
+                                <?php echo Form::input('username', isset($username) ? $username : '', array('class' => 'form-control '.$classes['username'], 'placeholder' => 'Nombre de usuario')); ?>
                                 <?php if(isset($errors['username'])): ?>
                                 <div class="invalid-feedback"><?php echo $errors['username']; ?></div>
                                 <?php endif; ?>
@@ -53,16 +53,16 @@
                         <div class="form-row">
                             <div class="form-group col-sm">
                                 <?php echo Form::label('Contraseña', 'password'); ?>
-                                <?php echo Form::password('password', trim(''), array('class' => 'form-control '.$classes['password'], 'placeholder' => 'Contraseña')); ?>
+                                <?php echo Form::password('password', '', array('class' => 'form-control '.$classes['password'], 'placeholder' => 'Contraseña')); ?>
                                 <?php if(isset($errors['password'])): ?>
-                                <div class="invalid-feedback"><?php echo trim($errors['password']); ?></div>
+                                <div class="invalid-feedback"><?php echo $errors['password']; ?></div>
                                 <?php endif; ?>
                             </div><!-- form-group -->
                             <div class="form-group col-sm">
                                 <?php echo Form::label('Confirmar contraseña', 'confirm_password'); ?>
-                                <?php echo Form::password('confirm_password', trim(''), array('class' => 'form-control '.$classes['confirm_password'], 'placeholder' => 'Confirmar contraseña')); ?>
+                                <?php echo Form::password('confirm_password', '', array('class' => 'form-control '.$classes['confirm_password'], 'placeholder' => 'Confirmar contraseña')); ?>
                                 <?php if(isset($errors['confirm_password'])): ?>
-                                <div class="invalid-feedback"><?php echo trim($errors['confirm_password']); ?></div>
+                                <div class="invalid-feedback"><?php echo $errors['confirm_password']; ?></div>
                                 <?php endif; ?>
                             </div><!-- form-group -->
                         </div>
