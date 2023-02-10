@@ -24,11 +24,11 @@
                     )); ?>
                         <div class="form-group">
                             <?php echo Form::label('Nombre de usuario o correo electrónico', 'username'); ?>
-                            <?php echo Form::input('username', trim('', array('class' => 'form-control '.$classes['username'], 'placeholder' => 'Nombre de usuario o correo electrónico'))); ?>
+                            <?php echo Form::input('username', '', array('class' => trim('form-control '.$classes['username']), 'placeholder' => 'Nombre de usuario o correo electrónico')); ?>
                         </div><!-- form-group -->
                         <div class="form-group">
                             <?php echo Form::label('Contraseña', 'password'); ?>
-                            <?php echo Form::password('password', trim('', array('class' => 'form-control '.$classes['password'], 'placeholder' => 'Contraseña'))); ?>
+                            <?php echo Form::password('password', '', array('class' => trim('form-control '.$classes['password']), 'placeholder' => 'Contraseña')); ?>
                         </div><!-- form-group -->
                         <div class="text-right small mb-3">
                             <?php echo Html::anchor('recuperar-contrasena', 'Recuperar contraseña', array('title' => 'Recuperar contraseña')); ?>

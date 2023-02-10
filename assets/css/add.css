@@ -1,7 +1,7 @@
 #overbox3 {
     position: fixed;
-    background-color: darkgray;
-    bottom: 0px;
+    background-color: green;
+    bottom: -14px;
     left: 0px;
     width: 100%;
     z-index: 999999;
