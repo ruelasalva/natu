@@ -35,7 +35,7 @@ class Controller_User extends \Controller
 			$response = 'error';
 
 			# SE VERIFICA EL USUARIO Y LA CONTRASEÑA COTEJANDOLOS ANTE LA BD
-			if($this->auth->login($username, $password))
+			if($this->auth->login(trim($username), trim($password)))
 			{
 				# SE ACTUALIZA AL ESTADO CONECTADO///
 				$this->auth->update_user(array('connected' => true), $username);

@@ -88,8 +88,8 @@ class Controller_Registro extends Controller_Base
 					{
 						# SE REGISTRA EL USUARIO EN LA BASE DE DATOS
 						$user = Auth::instance()->create_user(
-							$val->validated('username'),
-							$val->validated('password'),
+							trim($val->validated('username')),
+							trim($val->validated('password')),
 							$val->validated('email'),
 							1, // GRUPO
 							array(
