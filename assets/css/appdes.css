@@ -4158,9 +4158,9 @@ input[type="button"].btn-block {
     color: #000;
 }
 .alert-secondary {
-    color: #7c1c19;
-    background-color: #fcd7d6;
-    border-color: #fac6c5;
+    color: red;
+    background-color: #5DC1B9;
+    border-color: green;
 }
 .alert-secondary .alert-link {
     color: #521210;
