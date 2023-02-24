@@ -138,8 +138,8 @@ class Controller_Mi_Cuenta extends Controller_Base {
         $data['sales_history'] = $sales_history_info;
 
         # SE CARGA LA VISTA DE INICIO
-        $this->template->title       = 'Mi cuenta | Distribuidora Sajor';
-        $this->template->description = 'Distribuidora Sajor';
+        $this->template->title       = 'Mi cuenta | Natura y Mas';
+        $this->template->description = 'Natura y Mas';
         $this->template->content     = View::forge('mi_cuenta/index', $data, false);
     }
 
@@ -327,8 +327,8 @@ class Controller_Mi_Cuenta extends Controller_Base {
         $data['classes'] = $classes;
 
         # SE CARGA LA VISTA DE INICIO
-        $this->template->title       = 'Mi cuenta - Editar perfil | Distribuidora Sajor';
-        $this->template->description = 'Distribuidora Sajor';
+        $this->template->title       = 'Mi cuenta - Editar perfil | Natura y Mas';
+        $this->template->description = 'Natura y Mas';
         $this->template->content     = View::forge('mi_cuenta/editar_perfil', $data, false);
     }
 
@@ -400,8 +400,8 @@ class Controller_Mi_Cuenta extends Controller_Base {
         $data['sales_history'] = $sales_history_info;
 
         # SE CARGA LA VISTA DE INICIO
-        $this->template->title       = 'Mi cuenta - Historial de pedidos | Distribuidora Sajor';
-        $this->template->description = 'Distribuidora Sajor';
+        $this->template->title       = 'Mi cuenta - Historial de pedidos | Natura y Mas';
+        $this->template->description = 'Natura y Mas';
         $this->template->content     = View::forge('mi_cuenta/pedidos', $data, false);
     }
 
@@ -598,8 +598,8 @@ class Controller_Mi_Cuenta extends Controller_Base {
         $data['package']      = $package;
 
         # SE CARGA LA VISTA DE INICIO
-        $this->template->title       = 'Mi cuenta - Detalle de pedido #'.$sale->id.' | Distribuidora Sajor';
-        $this->template->description = 'Distribuidora Sajor';
+        $this->template->title       = 'Mi cuenta - Detalle de pedido #'.$sale->id.' | Natura y Mas';
+        $this->template->description = 'Natura y Mas';
         $this->template->content     = View::forge('mi_cuenta/pedido', $data, false);
     }
 
@@ -775,8 +775,8 @@ class Controller_Mi_Cuenta extends Controller_Base {
         $data['addresses'] = $addresses_info;
 
         # SE CARGA LA VISTA DE INICIO
-        $this->template->title       = 'Mi cuenta - Libreta de direcciones | Distribuidora Sajor';
-        $this->template->description = 'Distribuidora Sajor';
+        $this->template->title       = 'Mi cuenta - Libreta de direcciones | Natura y Mas';
+        $this->template->description = 'Natura y Mas';
         $this->template->content     = View::forge('mi_cuenta/direcciones/index', $data, false);
     }
 
@@ -940,8 +940,8 @@ class Controller_Mi_Cuenta extends Controller_Base {
         $data['last_name']   = $customer->last_name;
 
         # SE CARGA LA VISTA DE INICIO
-        $this->template->title       = 'Mi cuenta - Libreta de direcciones | Distribuidora Sajor';
-        $this->template->description = 'Distribuidora Sajor';
+        $this->template->title       = 'Mi cuenta - Libreta de direcciones | Natura y Mas';
+        $this->template->description = 'Natura y Mas';
         $this->template->content     = View::forge('mi_cuenta/direcciones/agregar', $data, false);
     }
 
@@ -1124,8 +1124,8 @@ class Controller_Mi_Cuenta extends Controller_Base {
         $data['last_name']   = $customer->last_name;
 
         # SE CARGA LA VISTA DE INICIO
-        $this->template->title       = 'Mi cuenta - Libreta de direcciones | Distribuidora Sajor';
-        $this->template->description = 'Distribuidora Sajor';
+        $this->template->title       = 'Mi cuenta - Libreta de direcciones | Natura y Mas';
+        $this->template->description = 'Natura y Mas';
         $this->template->content     = View::forge('mi_cuenta/direcciones/editar', $data, false);
     }
 
@@ -1171,8 +1171,8 @@ class Controller_Mi_Cuenta extends Controller_Base {
         $data['tax_data'] = $tax_data_info;
 
         # SE CARGA LA VISTA DE INICIO
-        $this->template->title       = 'Mi cuenta - Facturación | Distribuidora Sajor';
-        $this->template->description = 'Distribuidora Sajor';
+        $this->template->title       = 'Mi cuenta - Facturación | Natura y Mas';
+        $this->template->description = 'Natura y Mas';
         $this->template->content     = View::forge('mi_cuenta/facturacion/index', $data, false);
     }
 
@@ -1387,8 +1387,8 @@ class Controller_Mi_Cuenta extends Controller_Base {
 		$data['sat_tax_regimes_opts'] = Model_Sat_Tax_Regime::get_for_input();
 
         # SE CARGA LA VISTA DE INICIO
-        $this->template->title       = 'Mi cuenta - Facturación | Distribuidora Sajor';
-        $this->template->description = 'Distribuidora Sajor';
+        $this->template->title       = 'Mi cuenta - Facturación | Natura y Mas';
+        $this->template->description = 'Natura y Mas';
         $this->template->content     = View::forge('mi_cuenta/facturacion/agregar', $data, false);
     }
 
@@ -1626,8 +1626,8 @@ class Controller_Mi_Cuenta extends Controller_Base {
 		$data['sat_tax_regimes_opts'] = Model_Sat_Tax_Regime::get_for_input();
 
         # SE CARGA LA VISTA DE INICIO
-        $this->template->title       = 'Mi cuenta - Facturación | Distribuidora Sajor';
-        $this->template->description = 'Distribuidora Sajor';
+        $this->template->title       = 'Mi cuenta - Facturación | Natura y Mas';
+        $this->template->description = 'Natura y Mas';
         $this->template->content     = View::forge('mi_cuenta/facturacion/editar', $data, false);
     }
 }

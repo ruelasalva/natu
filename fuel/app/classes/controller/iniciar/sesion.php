@@ -130,8 +130,8 @@ class Controller_Iniciar_Sesion extends Controller_Base
         $data['classes'] = $classes;
 
 		# SE CARGA LA VISTA DE INICIAR SESION
-		$this->template->title       = 'Iniciar sesión | Distribuidora Sajor';
-		$this->template->description = 'Inicio de sesión en Distribuidora Sajor.';
+		$this->template->title       = 'Iniciar sesión | Natura y Mas';
+		$this->template->description = 'Inicio de sesión en Natura y Mas.';
 		$this->template->content     = View::forge('iniciar_sesion/index', $data, false);
 	}
 
@@ -207,8 +207,8 @@ class Controller_Iniciar_Sesion extends Controller_Base
     //     $data['classes'] = $classes;
 	//
 	// 	# SE CARGA LA VISTA DE INICIAR SESION
-	// 	$this->template->title       = 'Iniciar sesión | Distribuidora Sajor';
-	// 	$this->template->description = 'Inicio de sesión en Distribuidora Sajor.';
+	// 	$this->template->title       = 'Iniciar sesión | Natura y Mas';
+	// 	$this->template->description = 'Inicio de sesión en Natura y Mas.';
 	// 	$this->template->content     = View::forge('iniciar_sesion/index', $data, false);
 	// }
 }

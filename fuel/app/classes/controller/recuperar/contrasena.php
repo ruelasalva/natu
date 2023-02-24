@@ -78,7 +78,7 @@ class Controller_Recuperar_Contrasena extends Controller_Base
                         if($user_update)
                         {
                             # SE ALMACENA LA INFORMACION DEL USUARIO
-                            $customer_name = ($user->customer->name != '') ? $user->customer->name.' '.$user->customer->last_name : 'Usuario de Distribuidora Sajor';
+                            $customer_name = ($user->customer->name != '') ? $user->customer->name.' '.$user->customer->last_name : 'Usuario de Natura y Mas';
                             $mail = $user->email;
 
                             # SE ALMACENA EL MENSAJE DEL CORREO
@@ -102,9 +102,9 @@ class Controller_Recuperar_Contrasena extends Controller_Base
 
                             # SE ENVIA UN EMAIL CON EL MENSAJE
                             $email = Email::forge();
-                            $email->from('contacto@sectorweb.mx', 'Distribuidora Sajor');
+                            $email->from('contacto@naturaymas.com.mx', 'Natura y Mas');
                             $email->to($mail, $customer_name);
-                            $email->subject('Distribuidora Sajor - Cambio de contraseña');
+                            $email->subject('Natura y Mas - Cambio de contraseña');
                             $email->html_body(View::forge('email_templates/default', $data, false), false);
 
                             try{
@@ -171,8 +171,8 @@ class Controller_Recuperar_Contrasena extends Controller_Base
 		$data['classes'] = $classes;
 
 		# SE CARGA LA VISTA DE RECUPERAR CONTRASENA
-		$this->template->title       = 'Recuperar contraseña | Distribuidora Sajor';
-		$this->template->description = 'Recupera la contraseña de cuenta en Distribuidora Sajor.';
+		$this->template->title       = 'Recuperar contraseña | Natura y Mas';
+		$this->template->description = 'Recupera la contraseña de cuenta en Natura y Mas.';
 		$this->template->content     = View::forge('recuperar_contrasena/index', $data, false);
 	}
 
@@ -289,8 +289,8 @@ class Controller_Recuperar_Contrasena extends Controller_Base
 		$data['token']    = $token;
 
 		# SE CARGA LA VISTA DE RECUPERAR CONTRASENA
-		$this->template->title       = 'Nueva contraseña | Distribuidora Sajor';
-		$this->template->description = 'Establece la nueva contraseña de tu cuenta en Distribuidora Sajor.';
+		$this->template->title       = 'Nueva contraseña | Natura y Mas';
+		$this->template->description = 'Establece la nueva contraseña de tu cuenta en Natura y Mas.';
 		$this->template->content     = View::forge('recuperar_contrasena/nueva_contrasena', $data, false);
 	}
 }
